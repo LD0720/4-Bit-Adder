@@ -1,0 +1,163 @@
+|adder4
+bigCin => Adder:stage0.Cin
+x[0] => Adder:stage0.x
+x[1] => Adder:stage1.x
+x[2] => Adder:stage2.x
+x[3] => Adder:stage3.x
+y[0] => Adder:stage0.y
+y[1] => Adder:stage1.y
+y[2] => Adder:stage2.y
+y[3] => Adder:stage3.y
+S[0] << Adder:stage0.s
+S[1] << Adder:stage1.s
+S[2] << Adder:stage2.s
+S[3] << Adder:stage3.s
+Cout << Adder:stage3.Cout
+leds[7] << seg7:stage6.leds1[7]
+leds[6] << seg7:stage6.leds1[6]
+leds[5] << seg7:stage6.leds1[5]
+leds[4] << seg7:stage6.leds1[4]
+leds[3] << seg7:stage6.leds1[3]
+leds[2] << seg7:stage6.leds1[2]
+leds[1] << seg7:stage6.leds1[1]
+leds2[7] << seg7:stage7.leds1[7]
+leds2[6] << seg7:stage7.leds1[6]
+leds2[5] << seg7:stage7.leds1[5]
+leds2[4] << seg7:stage7.leds1[4]
+leds2[3] << seg7:stage7.leds1[3]
+leds2[2] << seg7:stage7.leds1[2]
+leds2[1] << seg7:stage7.leds1[1]
+
+
+|adder4|adder:stage0
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder4|adder:stage1
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder4|adder:stage2
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder4|adder:stage3
+Cin => s.IN1
+Cin => Cout.IN0
+Cin => Cout.IN0
+x => s.IN0
+x => Cout.IN0
+x => Cout.IN1
+y => s.IN1
+y => Cout.IN1
+y => Cout.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder4|seg7:stage6
+bcd[0] => Mux0.IN19
+bcd[0] => Mux1.IN19
+bcd[0] => Mux2.IN19
+bcd[0] => Mux3.IN19
+bcd[0] => Mux4.IN19
+bcd[0] => Mux5.IN19
+bcd[0] => Mux6.IN19
+bcd[1] => Mux0.IN18
+bcd[1] => Mux1.IN18
+bcd[1] => Mux2.IN18
+bcd[1] => Mux3.IN18
+bcd[1] => Mux4.IN18
+bcd[1] => Mux5.IN18
+bcd[1] => Mux6.IN18
+bcd[2] => Mux0.IN17
+bcd[2] => Mux1.IN17
+bcd[2] => Mux2.IN17
+bcd[2] => Mux3.IN17
+bcd[2] => Mux4.IN17
+bcd[2] => Mux5.IN17
+bcd[2] => Mux6.IN17
+bcd[3] => Mux0.IN16
+bcd[3] => Mux1.IN16
+bcd[3] => Mux2.IN16
+bcd[3] => Mux3.IN16
+bcd[3] => Mux4.IN16
+bcd[3] => Mux5.IN16
+bcd[3] => Mux6.IN16
+leds1[7] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+leds1[6] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+leds1[5] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+leds1[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+leds1[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+leds1[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+leds1[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|adder4|seg7:stage7
+bcd[0] => Mux0.IN19
+bcd[0] => Mux1.IN19
+bcd[0] => Mux2.IN19
+bcd[0] => Mux3.IN19
+bcd[0] => Mux4.IN19
+bcd[0] => Mux5.IN19
+bcd[0] => Mux6.IN19
+bcd[1] => Mux0.IN18
+bcd[1] => Mux1.IN18
+bcd[1] => Mux2.IN18
+bcd[1] => Mux3.IN18
+bcd[1] => Mux4.IN18
+bcd[1] => Mux5.IN18
+bcd[1] => Mux6.IN18
+bcd[2] => Mux0.IN17
+bcd[2] => Mux1.IN17
+bcd[2] => Mux2.IN17
+bcd[2] => Mux3.IN17
+bcd[2] => Mux4.IN17
+bcd[2] => Mux5.IN17
+bcd[2] => Mux6.IN17
+bcd[3] => Mux0.IN16
+bcd[3] => Mux1.IN16
+bcd[3] => Mux2.IN16
+bcd[3] => Mux3.IN16
+bcd[3] => Mux4.IN16
+bcd[3] => Mux5.IN16
+bcd[3] => Mux6.IN16
+leds1[7] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+leds1[6] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+leds1[5] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+leds1[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+leds1[3] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+leds1[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+leds1[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
